@@ -1,0 +1,60 @@
+.transaction-list-container {
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 20px;
+    background-color: #29293d;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.transaction-list-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.transaction-table th,
+.transaction-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+.transaction-table th button {
+    background: none;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.transaction-table th button:hover {
+    text-decoration: underline;
+}
+
+.transaction-table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.transaction-income {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.transaction-over-budget {
+    background-color: #b4a7a8;
+    color: #721c24;
+}
+
+.transaction-table tbody tr:hover{
+    background-color: #f1f1f1;
+    color: #29293d;
+}
+
