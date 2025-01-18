@@ -24,4 +24,4 @@ The application is hosted on [https://earnest-selkie-6094d5.netlify.app/](deploy
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/wallet-app-taskforce.git
+   [git clone https://github.com/<your-username>/wallet-app-taskforce.git](https://github.com/bonheurNE07/wallet_app.git)
