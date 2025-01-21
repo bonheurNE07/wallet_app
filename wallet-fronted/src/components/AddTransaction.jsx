@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import './AddTransaction.css';
 
+// component for setting a new transaction for an account
 const AddTransaction = () => {
     const [accounts, setAccounts] = useState([]);
     const [categories, setCategories] = useState([]);

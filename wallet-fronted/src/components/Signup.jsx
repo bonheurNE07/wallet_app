@@ -4,11 +4,12 @@ import api from "../services/api";
 import "./Auth.css";
 
 const Signup = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const navigate = useNavigate();
+    const [username, setUsername] = useState(""); // state for name
+    const [password, setPassword] = useState(""); // state for password
+    const [confirmPassword, setConfirmPassword] = useState(""); // state for confirm password
+    const navigate = useNavigate(); // defining reaact router navigation
 
+    // handle signup form submission
     const handleSignup = (e) => {
         e.preventDefault();
 
@@ -17,10 +18,10 @@ const Signup = () => {
             return;
         }
 
-        api.post("signup/", { username, password })
+        api.post("signup/", { username, password }) // send signup request
         .then(() => {
             alert("User created successfully.");
-            navigate("/login");
+            navigate("/login"); // redirect to login page
         })
         .catch((error) => console.error("Error during signup:", error));
     };

@@ -1,31 +1,32 @@
 import axios from 'axios'
 
+// create an axios instance with the base url for thr backend API
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000/api/', 
+    baseURL: 'http://127.0.0.1:8000/api/',
 });
 
+// Add a resquest interceptor to include the authorization token in every request 
 api.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem("accessToken");
+        const token = localStorage.getItem("accessToken"); // retrieve token from localStrorage
         if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
+            config.headers.Authorization = `Bearer ${token}`; // Attach token to the Authorization header
         }
-        return config;
+        return config; // pass the update config to the request
     },
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error)// handle request errors
 );
 
+// Add a response interceptor to handle 401 errors (unauthorized)
 api.interceptors.response.use(
-    (response) => response,
+    (response) => response, // pass through successful responses
     (error) => {
         if (error.response && error.response.status === 401) {
-            localStorage.removeItem("accessToken");
-            window.location.href = "/login";
+            localStorage.removeItem("accessToken"); // remove invalid token
+            window.location.href = "/login"; // redirect user to login page
         }
-        return Promise.reject(error);
+        return Promise.reject(error); // handle other response errors
     }
 );
 
-export default api;
-
-// https://wallet-app-o7pf.onrender.com/api/  https://wallet-app-o7pf.onrender.com
+export default api; // export the axios instance for use throughout the app

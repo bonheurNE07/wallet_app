@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import api from "../services/api";
 import './AddCategory.css'
 
+// component for adding new category
 const AddCategory = () => {
     const [categories, setCategories] = useState([]);
 

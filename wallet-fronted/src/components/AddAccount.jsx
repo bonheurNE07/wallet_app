@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import api from '../services/api';
-import './AddAccount.css'
+import './AddAccount.css';
 
+// componenet for adding aa new account
 const AddAccount = () => {
-    const [name, setName] = useState('');
-    const [balance, setBalance] = useState('');
+    const [name, setName] = useState(''); // defining the state for account name
+    const [balance, setBalance] = useState(''); // state for account balance
     
+    // handle form submition
     const handleSubmit = (e) => {
-        e.preventDefault();
-        api.post('accounts/', { name, balance })
+        e.preventDefault(); // prevent default from behavior
+        api.post('accounts/', { name, balance }) // make API call to add account
         .then(() => {
             alert('Account added successfully.');
+            // reset the fields fter notify user on success
             setName('');
             setBalance('');
         })
