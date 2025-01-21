@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://wallet-app-o7pf.onrender.com/api/',
+    baseURL: 'http://127.0.0.1:8000/api/', 
 });
 
 export default api;
+
+// https://wallet-app-o7pf.onrender.com/api/  https://wallet-app-o7pf.onrender.com

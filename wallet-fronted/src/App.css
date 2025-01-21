@@ -18,6 +18,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  flex-wrap: wrap;
   box-shadow: opx 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -27,9 +29,16 @@ body {
   color: #ffffff;
 }
 
-.nav-links {
+.navbar .nav-links {
   list-style: none;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  gap: .9rem;
+  columns: auto 10rem;
   margin: 0;
   padding: 0;
 }
@@ -51,5 +60,5 @@ body {
 
 h2 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.2rem;
 }
