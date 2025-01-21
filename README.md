@@ -22,6 +22,7 @@ A wallet application that allows users to:
 1. Clone the repository:
 ```bash
 https://github.com/bonheurNE07/wallet_app.git
+```
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
