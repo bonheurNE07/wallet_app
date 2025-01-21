@@ -1,5 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router'
+import React, { Children } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router'
+import Signup from './components/Signup';
+import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import AddAccount from './components/AddAccount';
 import AddCategory from './components/AddCategory';
@@ -8,8 +10,12 @@ import TransactionList from './components/TransactionList';
 import AddBudget from './components/AddBudget';
 import Report from './components/Report';
 
-
 import './App.css';
+
+const PrivateRoute = ({ children }) => {
+  const token = localStorage.getItem("accessToken");
+  return token ? children : <Navigate to="/login" />;
+}
 
 const App = () => {
   return (
@@ -43,7 +49,9 @@ const App = () => {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path='/add-account' element={<AddAccount />} />
           <Route path='/add-category' element={<AddCategory />} />
           <Route path='/add-transaction' element={<AddTransaction />} />

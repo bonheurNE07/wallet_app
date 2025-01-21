@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import api from "../services/api";
 import "./Auth.css";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -13,6 +15,7 @@ const Login = () => {
         .then((response) => {
             localStorage.setItem("accessToken", response.data.access);
             alert("Login successfully!");
+            navigate("/");
         })
         .catch((error) => console.error("Error during login:", error));
     };
@@ -44,6 +47,14 @@ const Login = () => {
                 <button type="submit" className="auth-button">
                     Login
                 </button>
+                <p>
+                    Don't have an account?{" "}
+                    <span
+                        className="auth-link"
+                        onClick={() => navigate("/signup")}>
+                            Signup here
+                    </span> 
+                </p>
             </form>
         </div>
     );

@@ -62,3 +62,9 @@ input:focus {
 .auth-button:hover {
     background-color: #0097a7;
 }
+
+.auth-link {
+    color: #00bcd4;
+    cursor: pointer;
+    text-decoration: underline;
+}

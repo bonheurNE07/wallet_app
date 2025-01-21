@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import "./Auth.css";
-import { use } from "react";
 
 const Signup = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSignup = (e) => {
         e.preventDefault();
@@ -17,7 +18,10 @@ const Signup = () => {
         }
 
         api.post("signup/", { username, password })
-        .then(() => alert("User created successfully."))
+        .then(() => {
+            alert("User created successfully.");
+            navigate("/login");
+        })
         .catch((error) => console.error("Error during signup:", error));
     };
 
@@ -59,6 +63,14 @@ const Signup = () => {
             <button type="submit" className="auth-button">
                 Signup
             </button>
+            <p>
+                Already have n account?{" "}
+                <span
+                        className="auth-link"
+                        onClick={() => navigate("/login")}>
+                            Login here
+                        </span>
+            </p>
         </form>
         </div>
     );

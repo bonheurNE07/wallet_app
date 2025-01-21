@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import './AddTransaction.css';
 
 const AddTransaction = () => {
     const [accounts, setAccounts] = useState([]);
     const [categories, setCategories] = useState([]);
+    const navigate = useNavigate();
 
     const [account, setAccount] = useState('');
     const [category, setCategory] = useState('');
@@ -36,6 +38,7 @@ const AddTransaction = () => {
             setAmount('');
             setDate('');
             setDescription('');
+            navigate("/transactions");
         })
         .catch(error => console.error('Error adding transaction:', error));
     };
