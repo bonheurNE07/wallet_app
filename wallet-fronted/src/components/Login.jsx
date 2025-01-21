@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+import api from "../services/api";
+import "./Auth.css";
+
+const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        api.post("login/", { username, password })
+        .then((response) => {
+            localStorage.setItem("accessToken", response.data.access);
+            alert("Login successfully!");
+        })
+        .catch((error) => console.error("Error during login:", error));
+    };
+
+    return (
+        <div className="auth-container">
+            <form onSubmit={handleLogin} className="auth-form">
+                <h2 className="auth-title">Login</h2>
+                <label>
+                    Username:
+                    <input 
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Enter username"
+                        required
+                    />
+                </label>
+                <label>
+                    Password:
+                    <input 
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Enter password"
+                        required 
+                    />
+                </label>
+                <button type="submit" className="auth-button">
+                    Login
+                </button>
+            </form>
+        </div>
+    );
+};
+
+export default Login;
