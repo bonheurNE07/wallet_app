@@ -60,7 +60,8 @@ Deployed on **Netlify**.
 
 ## Live Demo
 
-Frontend URL: https://wallet-app-bne.netlify.app/
+Frontend URL: https://dynamic-zabaione-47f45c.netlify.app/
+
 Backend URL: https://wallet-app-1mdo.onrender.com
 
 ## How to Use
