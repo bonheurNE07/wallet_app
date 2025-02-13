@@ -18,13 +18,11 @@ A wallet application that allows users to:
 - **Backend:** Django REST Framework
 - **Database:** SQLite (development)
 
-## Deployment
-The application is hosted on [https://earnest-selkie-6094d5.netlify.app/](deployment-link).
-
 ## Installation
 1. Clone the repository:
 ```bash
 https://github.com/bonheurNE07/wallet_app.git
+```
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
@@ -62,8 +60,9 @@ Deployed on **Netlify**.
 
 ## Live Demo
 
-Frontend URL: 
-Backend URL: 
+Frontend URL: https://dynamic-zabaione-47f45c.netlify.app/
+
+Backend URL: https://wallet-app-1mdo.onrender.com
 
 ## How to Use
    **1. Signup**: Create a new account or login if you already have one.
