@@ -2,7 +2,8 @@ import axios from 'axios'
 
 // create an axios instance with the base url for thr backend API
 const api = axios.create({
-    baseURL: 'https://wallet-app-1mdo.onrender.com/api/',
+    // baseURL: 'https://wallet-app-1mdo.onrender.com/api/', http://127.0.0.1:8000/
+    baseURL: 'http://127.0.0.1:8000/api/',
 });
 
 // Add a resquest interceptor to include the authorization token in every request 
